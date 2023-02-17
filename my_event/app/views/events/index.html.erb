@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<center>
+<h1 class="h1-signup">Events</h1>
+
+
+<table class= "table table-striped">
+
+  <thead class="thead">
+    <tr>
+      <th>Description</th>
+      <th>Detail </th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.description %></td>
+        <td><%= event.detail %></td>
+        <td><%= event.status %></td>
+
+        <td><%= link_to 'Show', event, :class => "event-links"%></td>
+        <td><%= link_to 'Edit', edit_event_path(event), :class => "event-links" %></td>
+        <td><%= link_to 'Destroy', event,  :class => "event-links", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <%= render 'event', event: event %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to  'New Event', new_event_path, class:"btn btn-light" %>
+</center>

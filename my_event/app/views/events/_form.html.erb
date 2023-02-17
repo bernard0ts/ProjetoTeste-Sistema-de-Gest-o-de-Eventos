@@ -1,0 +1,57 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<center>
+
+  <div class="col-md-6">
+  <div class="h1-signup">
+    <%= form.label :description %>
+    <%= form.text_field :description, class:"form-control", placeholder:"Digite o nome do seu evento"%>
+  </div>
+  </div>
+  
+
+  <div class="col-md-6">
+  <div class="h1-signup">
+    <%= form.label :detail %>
+    <%= form.text_field :detail, class:"form-control", placeholder:"Digite os detalhes do seu evento"  %>
+  </div>
+  </div>
+
+
+  <br>
+
+  <div class="col-md-6">
+  <div class="h1-signup">
+  <%= form.label :tag, style: "display: block" %>
+  <%= form.text_field :tags, value: event.tags.map(&:name).join(", "), class:"form-control" %>
+  </div>
+  </div>
+
+  <br>
+
+   <div class= "h1-signup">
+    <%= form.label :status %>
+    <%= form.select :status, Event.statuses.keys, class:"form-control" %>
+    </div>
+  <br>
+
+  <div class="actions">
+    <%= form.submit nil, class:"btn btn-light" %>
+  </div>
+  
+  <br>
+
+</center>
+  
+<% end %>

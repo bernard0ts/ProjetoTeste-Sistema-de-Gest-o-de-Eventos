@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<center>
+<p class="h1-signup">
+  <strong>Name:</strong>
+  <%= @tag.name%>
+</p>
+<br>
+
+<%= link_to 'Edit', edit_tag_path(@tag), class: "btn btn-dark" %> |
+<%= link_to 'Back', tags_path, class: "btn btn-dark" %>
+</center>

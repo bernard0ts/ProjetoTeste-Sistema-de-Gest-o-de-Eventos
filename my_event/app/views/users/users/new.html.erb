@@ -1,0 +1,36 @@
+<center>
+<img src= "/assets/user_photo.jpeg" class= "user-photo">
+<div class= "form-container">
+<div class= "form-group">
+<h1 class="h1-signup"><%= t('.sign_up') %></h1>
+
+<%= form_for(@user, url: users_path) do |f| %>
+  
+
+  <div class="col-12 colsm-6 col-md-4">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: "Enter your best email" %>
+  </div>
+
+  <div class="col-12 colsm-6 col-md-4">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: "Enter a password"%>
+
+    <% if @minimum_password_length %>
+      <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+    <% end %>
+  </div>
+
+  <div class="col-12 colsm-6 col-md-4">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control', placeholder: "Confirm your password"%>
+  </div>
+ 
+  <div class="form-group">
+    <%= f.submit%>
+  </div>
+<% end %>
+
+
+
+</center>

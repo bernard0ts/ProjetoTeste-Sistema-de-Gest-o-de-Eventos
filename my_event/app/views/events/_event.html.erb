@@ -1,0 +1,14 @@
+<div id="<%= dom_id event %>">
+
+<strong class= "h1-signup">Tags:</strong>
+<% event.tags.each do |tag| %>
+<%= link_to tag, style:"text-decoration:none" do %>
+<span class="tag"><%= tag.name.capitalize %></span>
+<% end %>
+<% end %>
+
+</div>
+
+
+
+

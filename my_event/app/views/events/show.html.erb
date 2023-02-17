@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p class="h1-signup">
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p class="h1-signup">
+  <strong>Detail:</strong>
+  <%= @event.detail %>
+</p>
+
+<p class="h1-signup">
+  <strong>Status:</strong>
+  <%= @event.status %>
+</p>
+
+<center>
+
+<% if Participant.find_by(event_id: @event.id, user_id: current_user.id)%>
+  <%= button_to "I don't want participate", event_participant_path(@event), class: "btn btn-primary", method: :delete %>
+<% else %>
+  <%= button_to "I want participate", event_participant_path(@event), class: "btn btn-primary", method: :create %>
+<% end %>
+
+<br>
+
+<div class="h1-signup">
+<%= "Número de participantes: "%>
+<%= Participant.where(event_id: @event.id).count%>
+</div>
+
+<br>
+<%= link_to 'Edit', edit_event_path(@event), class: "btn btn-dark" %> 
+<%= link_to 'Back', events_path, class: "btn btn-dark" %>
+</center>

@@ -1,0 +1,125 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ *= require_self
+ *= require bootstrap/dist/css/bootstrap
+ */
+
+ 
+   /* tag css*/
+
+ .tag {
+    background: #0045c6;
+    color:#FFF;
+    padding: 4px;
+    margin:0.5em;
+    border-radius:8px;
+    display: inline-block;
+ }
+  
+   /* site body css*/
+
+ .body {
+   background-image: url("/assets/bg.jpeg");
+   background-size: cover;
+   height: 600px;
+   
+}
+
+.h1-signup{
+   color: white;
+   font-family: sans-serif;
+   text-align: center;
+}
+   /* sign up and sign in css*/
+
+.form-container{
+   border-radius: 20px;
+   padding: 30px;
+   margin-top: 100px;
+   box-shadow: 0px 0px 10px 0px;
+}
+
+.form-group{
+   color: #FFF;
+   border-radius: 20px;
+}
+
+.user-photo{
+   width: 60px;
+   height: 60px;
+   position: absolute;
+   margin-top: 122px;
+   top: -15px;
+   left: 890px;
+   border-radius: 30px;
+}
+
+.form-container{
+   background-image: linear-gradient(to right, rgb(241, 143, 250) , rgb(3, 46, 59), rgb(3, 140, 182));
+ }
+
+ .sign-out{
+   margin-left:1600px;
+ }
+ 
+   /* welcome css */
+
+ .welcome-container{
+   border-radius: 10px;
+   margin-top: 20px;
+   box-shadow: 0px 0px 10px 0px;
+ }
+
+ /* events css */
+
+ .table{
+   background-color: #fff5;
+   backdrop-filter: blur(7px);
+   box-shadow: 0 .4rem .8rem #0005;
+   border-radius: .7rem;
+   overflow: hidden;
+ }
+
+.thead{
+   position:sticky;
+   top:0;
+   left: 0;
+   background-color: #d5d1defe;
+}
+
+.event-links{
+   color: #FFF;
+   background-color: #fff5;
+   backdrop-filter: blur(1px);
+   box-shadow: 0px 0px 3px 0px;
+   padding: 2%;
+}
+
+.table-striped tr:nth-child(even) {
+   background-color: #0700145b
+}
+
+tbody tr:hover{
+   background-color: #fff6;
+}
+
+@media (max-width: 1000px) {
+   td:not(:first-of-type) {
+      min-width:12.1rem
+   }
+}
+
+.presence{
+   color: #FFF;
+}
